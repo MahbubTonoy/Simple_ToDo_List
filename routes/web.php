@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Authentication;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/test', function() {
-    return view('auth2/login/register');
+Route::group(["prefix"=>"admin"], function(){
 });
+Route::get('/login', [Authentication::class, "login"])->name('login');
+Route::get('/register', [Authentication::class, "register"])->name('register');
+Route::get('/forgetPassword', [Authentication::class, "forgetPwd"])->name('forgetPwd');
+Route::get('/changePassword', [Authentication::class, "changePwd"])->name('changePwd');
+Route::get('/verify', [Authentication::class, "verifyEmail"])->name('verifyEmail');

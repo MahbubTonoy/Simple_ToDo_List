@@ -11400,13 +11400,13 @@ body {
 }
 
 h1, .h1 {
-  font-size: 3em;
+  font-size: 4em;
   text-align: center;
   color: #fff;
-  font-weight: 100;
+  font-weight: 700;
   text-transform: capitalize;
   letter-spacing: 4px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
 /*-- main --*/
@@ -11425,15 +11425,15 @@ h1, .h1 {
   padding: 3em;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=text], input[type=email], input[type=password], input[type=number] {
   font-size: 1em;
   color: #fff;
   font-weight: 100;
-  width: 94.5%;
+  width: 100%;
   display: block;
   border: none;
   padding: 0.8em;
-  border: solid 1px rgba(255, 255, 255, 0.8);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.8);
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #fff 4%);
   background-position: -800px 0;
@@ -11443,17 +11443,18 @@ input[type=text], input[type=email], input[type=password] {
   font-family: "Roboto", sans-serif;
 }
 
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=password]::-moz-placeholder {
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=number]::-moz-placeholder {
   opacity: 0.9;
 }
 
-input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=number]:-ms-input-placeholder {
   opacity: 0.9;
 }
 
 input[type=text]::placeholder,
 input[type=email]::placeholder,
-input[type=password]::placeholder {
+input[type=password]::placeholder,
+input[type=number]::placeholder {
   opacity: 0.9;
 }
 
@@ -11759,14 +11760,9 @@ input.checkbox:checked:after {
   }
 }
 /*-- responsive-design --*/
-@media (max-width: 1440px) {
-  input[type=text], input[type=email], input[type=password] {
-    width: 94%;
-  }
-}
 @media (max-width: 1366px) {
   h1, .h1 {
-    font-size: 2.6em;
+    font-size: 3.6em;
   }
 
   .agileits-top {
@@ -11798,7 +11794,7 @@ input.checkbox:checked:after {
 }
 @media (max-width: 991px) {
   h1, .h1 {
-    font-size: 2.4em;
+    font-size: 3.4em;
   }
 
   .main-w3layouts {
@@ -11809,14 +11805,10 @@ input.checkbox:checked:after {
   .main-agileinfo {
     width: 58%;
   }
-
-  input[type=text], input[type=email], input[type=password] {
-    width: 93%;
-  }
 }
 @media (max-width: 800px) {
   h1, .h1 {
-    font-size: 2.2em;
+    font-size: 3.2em;
   }
 }
 @media (max-width: 736px) {
@@ -11843,7 +11835,7 @@ input.checkbox:checked:after {
   }
 
   h1, .h1 {
-    font-size: 2em;
+    font-size: 3em;
     letter-spacing: 3px;
   }
 }
@@ -11858,16 +11850,12 @@ input.checkbox:checked:after {
 }
 @media (max-width: 480px) {
   h1, .h1 {
-    font-size: 1.8em;
+    font-size: 2.8em;
     letter-spacing: 3px;
   }
 
   .agileits-top {
     padding: 1.8em;
-  }
-
-  input[type=text], input[type=email], input[type=password] {
-    width: 91%;
   }
 
   .agileits-top p {
@@ -11876,7 +11864,7 @@ input.checkbox:checked:after {
 }
 @media (max-width: 414px) {
   h1, .h1 {
-    font-size: 1.8em;
+    font-size: 2.8em;
     letter-spacing: 2px;
   }
 
@@ -11938,13 +11926,24 @@ input.checkbox:checked:after {
     margin: 0 0 1em;
   }
 
-  input[type=text], input[type=email], input[type=password] {
-    width: 89.5%;
+  input[type=text], input[type=email], input[type=password], input[type=number] {
     font-size: 0.85em;
   }
 
+  /* Chrome, Safari, Edge, Opera */
+  input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
   h1, .h1 {
-    font-size: 1.7em;
+    font-size: 2.7em;
     letter-spacing: 0px;
   }
 
