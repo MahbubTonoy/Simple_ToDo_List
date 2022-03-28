@@ -5,6 +5,7 @@
 <div class="main-agileinfo">
 	<div class="agileits-top">
 		<form action="#" method="post">
+			@csrf
 			<input class="text w3lpass" type="number" name="code" placeholder="6 Digit Code" required="" autocomplete="off">
 			<input type="submit" value="SEND VERIFICATION CODE">
 		</form>

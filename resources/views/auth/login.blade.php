@@ -4,12 +4,14 @@
 <h1>{{$data->title}}</h1>
 <div class="main-agileinfo">
 	<div class="agileits-top">
-		<form action="#" method="post">
-			<input class="text" type="text" name="Username" placeholder="Username" required="" autocomplete="off">
+		{{-- {{$errors}} --}}
+		<form action="{{route('loginUser')}}" method="POST">
+			@csrf
+			<input class="text" type="text" name="username" placeholder="Username" required="" autocomplete="off">
 			<input class="text w3lpass" type="password" name="password" placeholder="Password" required="" autocomplete="off">
 			<div class="wthree-text">
 				<label class="anim">
-					<input type="checkbox" class="checkbox" required="">
+					<input type="checkbox" class="checkbox" name="remember">
 					<span>Remember Me?</span>
 				</label>
 				<div class="clear"> </div>

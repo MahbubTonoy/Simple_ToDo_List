@@ -5,6 +5,7 @@
 <div class="main-agileinfo">
 	<div class="agileits-top">
 		<form action="#" method="post">
+			@csrf
 			<input class="text" type="password" name="oldpass" placeholder="Old Password" required="" autocomplete="off">
 			<input class="text w3lpass" type="password" name="newpass" placeholder="New Password" required="" autocomplete="off">
 			<input class="text w3lpass" type="password" name="newpass" placeholder="Confirm Password" required="" autocomplete="off">

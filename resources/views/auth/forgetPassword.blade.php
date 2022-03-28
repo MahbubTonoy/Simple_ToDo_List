@@ -5,6 +5,7 @@
 <div class="main-agileinfo">
 	<div class="agileits-top">
 		<form action="#" method="post">
+			@csrf
 			<input class="text w3lpass" type="email" name="email" placeholder="Your Email" required="" autocomplete="off">
 			<input type="submit" value="SEND VERIFICATION CODE">
 		</form>
