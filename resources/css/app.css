@@ -114,6 +114,32 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+nav {
+  background: rgba(255,255,255,0.2);
+}
+.nav_container {
+  text-align: left;
+  max-width: 1250px;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+}
+.nav_container h1 {
+  display: inline-block;
+  font-size: 2em;
+}
+.nav_container ul {
+  margin-left: auto;
+}
+.nav_container ul li {
+  display: inline-flex;
+  height: 100%;
+}
+.nav_container ul a {
+  color: #fff;
+  padding: 10px;
+  font-size: 1.1em
+}
 h1 {
   font-size: 4em;
   text-align: center;

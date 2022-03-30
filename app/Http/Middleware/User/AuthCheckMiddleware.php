@@ -5,7 +5,7 @@ namespace App\Http\Middleware\User;
 use Closure;
 use Illuminate\Http\Request;
 
-class AuthCheck
+class AuthCheckMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,7 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        // dd($request->path() === "login");
-        if (!session()->has('usrToken') && ($request->path() !== "/login" && $request->path() !== '/register')) {
+        if (!session()->has('usrToken') && ($request->path() !== "login" && $request->path() !== 'register')) {
             return redirect()->route('login')->with("errors", "You Must Log In First");
         } 
         else if (

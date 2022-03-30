@@ -36,13 +36,13 @@ class AuthCheck extends Controller
         $request->validate([
             "username"=>"required",
             "password"=>"required|min:8",
-            // "remember"=>"required"
         ]);
 
         $user = User::where('username', '=', $request->username)->first();
         if($user) {
             if(Hash::check($request->password, $user->password)) {
                 Session::put('usrToken', $request->session()->getId());
+                $request->has('remember');
                 return redirect("user/dashboard");
             } else {
                 return back()->withError('Password Doesn\'t Match. Try again.');

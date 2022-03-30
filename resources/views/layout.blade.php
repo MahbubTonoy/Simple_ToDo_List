@@ -9,14 +9,16 @@
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <!-- //web font -->
 <!-- Custom Theme files -->
 <link href="{{asset('assets/css/app.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!-- //Custom Theme files -->
+
 </head>
 <body>
 	<!-- main -->
+	@include("partials.navbar")
 	<div class="main-w3layouts wrapper">
     @yield('content')
 		<!-- copyright -->
@@ -38,5 +40,9 @@
 		</ul>
 	</div>
 	<!-- //main -->
+
+	<script>
+		toastr.info('Are you the 6 fingered man?')
+	</script>
 </body>
 </html>

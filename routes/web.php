@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\Authentication;
-use App\Http\Controllers\Auth;
+// use App\Http\Controllers\Auth;
 use App\Http\Controllers\Auth\AuthCheck;
 use App\Http\Controllers\User\RouteController;
+// use App\Http\Middleware\User\AuthCheckMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware'=>'AuthCheck'], function() {
+Route::group([
+    'middleware'=>'AuthCheckMiddleware'
+], function() {
     Route::get('/login', [Authentication::class, "login"])->name('login');
     Route::get('/register', [Authentication::class, "register"])->name('register');
 });
@@ -32,7 +35,7 @@ Route::post('/save', [AuthCheck::class, "saveUser"])->name('saveUser');
 Route::post('/access', [AuthCheck::class, "loginUser"])->name('loginUser');
 
 
-Route::group(['prefix'=>'/user', 'middleware'=>'AuthCheck'], function(){
+Route::group(['prefix'=>'/user', 'middleware'=>'AuthCheckMiddleware'], function(){
     Route::get('/dashboard', [RouteController::class, 'index'])->name('dashboard');
     Route::get('/logout', [RouteController::class, 'logout'])->name('logout');
     Route::get('/changePassword', [Authentication::class, "changePwd"])->name('changePwd');
